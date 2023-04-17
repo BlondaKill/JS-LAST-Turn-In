@@ -70,7 +70,7 @@ carrito.forEach((product) =>{
     let carritoContent = document.createElement('div')
     carrito.className = 'model-content';
     carritoContent.innerHTML = `
-    <img src ="${prompt.img}">
+    <img src ="${product.img}">
     <h3>${product.nombre}</h3>;
     <p>${product.precio} $</p>
 
