@@ -99,7 +99,7 @@ body{
     width: 80%;
     margin: 0 10%;
     max-height: 88vh;
-    color: red;
+    color: greenyellow;
     background-color: black;
     display: flex;
     flex-direction: column;
@@ -116,7 +116,7 @@ body{
 .model-header {
     display: flex;
     justify-content: space-around;
-    background-color: rgb(28, 173, 231);
+    background-color: red;
     color: #fff;
     width: 100%;
 }
