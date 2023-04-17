@@ -74,7 +74,6 @@ carrito.forEach((product) =>{
     <h3>${product.nombre}</h3>;
     <p>${product.precio} $</p>
     
-    
 
     `;
     modelContainer.append(carritoContent);
