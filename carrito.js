@@ -56,7 +56,7 @@ verCarrito.addEventListener("click", () => {
     modelContainer.append(modelHeader);
 
     const modelbutton = document.createElement('h1');
-    modelbutton.innerText = 'close';
+    modelbutton.innerText = 'x';
     modelbutton.className = 'model-header-button';
 
     modelbutton.addEventListener('click', () => {
