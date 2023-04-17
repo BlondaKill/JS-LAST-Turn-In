@@ -51,12 +51,12 @@ verCarrito.addEventListener("click", () => {
     const modelHeader = document.createElement('div');
     modelHeader.className = 'model-header'
     modelHeader.innerHTML = `
-    <h1 class = 'model-header-title'>Carrito</h1>
+    <h1 class = 'model-header-title'>Cart</h1>
     `;
     modelContainer.append(modelHeader);
 
     const modelbutton = document.createElement('h1');
-    modelbutton.innerText = 'x';
+    modelbutton.innerText = 'close';
     modelbutton.className = 'model-header-button';
 
     modelbutton.addEventListener('click', () => {
