@@ -34,7 +34,7 @@ body{
     background-position: center;
     height: 100vh;
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url(img/shoelaces.jpg);
+    url(img/flying.JPG);
 }
 
 .banner-container {
@@ -97,7 +97,7 @@ body{
     width: 80%;
     margin: 0 10%;
     max-height: 88vh;
-    color: bisque;
+    color: red;
     background-color: black;
     display: flex;
     flex-direction: column;
