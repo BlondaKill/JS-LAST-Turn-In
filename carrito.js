@@ -11,28 +11,8 @@ const productos = [
     img: src= "../img/joker.jpg"},
       ];
   
-  const shopSneakers = document.getElementById(id="shopSneakers");
-  const verCarrito = document.getElementById("verCarrito");
-  const modelContainer = document.getElementById('model-container');
-
   
-
-let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-
-productos.forEach((sneak) => {
-    let content = document.createElement('div');
-    content.className = "card"
-    content.innerHTML = `<img src="${sneak.img}">
-    <h3>${sneak.nombre}</h3>
-    <p class="price">${sneak.precio} $</p>
-    `;
-
-    shopSneakers.append(content);
-    let buy = document.createElement("button")
-    buy.innerText = 'comprar';
-    buy.className = "comprar";
     
-    content.append(buy);
 
     buy.addEventListener("click", () =>{
         carrito.push({
@@ -41,13 +21,11 @@ productos.forEach((sneak) => {
             nombre: sneak.nombre,
             precio: sneak.precio,
 });
-/*console.log(carrito);
-console.log(carrito.length);*/
 
 SaveLocal();
 
 });
-});
+
 
 verCarrito.addEventListener("click", () => {
     modelContainer.innerHTML = '';
@@ -70,28 +48,68 @@ verCarrito.addEventListener("click", () => {
 
     modelHeader.append(modelbutton);
 
-carrito.forEach((product) =>{
-    let carritoContent = document.createElement('div')
+    carrito.forEach((product) =>{
+    let carritoContent = document.createElement('div');
     carrito.className = 'model-content';
     carritoContent.innerHTML = `
     <img src ="${product.img}">
     <h3>${product.nombre}</h3>;
     <p>${product.precio} $</p>
-    
-
+    <span class = 'restar'> - </span>
+    <p>Cantidad: ${product.cantidad} $</p>
+    <span class = 'sumar'> + </span>
+    <p>Total: ${product.cantidad * product.precio} $</p>
     `;
+
     modelContainer.append(carritoContent);
+
+    let restar = carritoContent.query
+
+    let eliminar = document.createElement('span');
+    eliminar.innerText = "❌";
+    eliminar.classList = 'delete-product';
+    carritoContent.append (eliminar);
+
+    eliminar.addEventListener('click', eliminarProducto);
+ 
 });
-const total = carrito.reduce((acc, el) => acc + el.precio, 0);
+
+const total = carrito.reduce((acc, el) => acc + el.precio * el.cantidad, 0);
+
 const totalBuying = document.createElement('div');
 totalBuying.className = 'total - content'
 totalBuying.innerHTML = `total a pagar: ${total} $`;
 modelContainer.append(totalBuying); 
-
-
 });
 
-const SaveLocal = () => {
-localStorage.setItem('carrito', JSON.stringify(carrito));
+verCarrito.addEventListener('click', pintarCarrito);
+
+const eliminarProducto = () => {
+const foundId = carrito.find((element) => element.id);
+
+    carrito = carrito.filter((carritoId) => {
+        return carritoId !== foundId;
+    });
+
+    carritoCounter();
+    saveLocal();
+    pintarCarrito();
 };
 
+/*const saveLocal = () => {
+localStorage.setItem('carrito', JSON.stringify(carrito));
+};*/
+
+
+
+
+const carritoCounter = () => {
+    cantidadCarrito.style.display = 'block';
+
+    const carritoLenght= carrito.length;
+localStorage.setItem('carrito.lenght', JSON.stringify(carritoLenght));
+
+    cantidadCarrito.innerText = cJSON.parse(localStorage.getItem('carritoLenght'));
+};
+
+carritoCounter();

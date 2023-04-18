@@ -100,7 +100,7 @@ body{
     margin: 0 10%;
     max-height: 88vh;
     color: greenyellow;
-    background-color: black;
+    background-color: orange;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -152,9 +152,13 @@ margin: 10px;
     padding-top: 20px;
 }
 
+.sumar {
+    cursor: pointer;
+}
 
-
-
+.restar {
+    cursor: pointer;
+}
 
 
 
