@@ -17,7 +17,7 @@ const productos = [
 
   
 
-let carrito = [];
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 productos.forEach((sneak) => {
     let content = document.createElement('div');
@@ -41,7 +41,11 @@ productos.forEach((sneak) => {
             nombre: sneak.nombre,
             precio: sneak.precio,
 });
-console.log(carrito);
+/*console.log(carrito);
+console.log(carrito.length);*/
+
+SaveLocal();
+
 });
 });
 
@@ -86,4 +90,8 @@ modelContainer.append(totalBuying);
 
 
 });
+
+const SaveLocal = () => {
+localStorage.setItem('carrito', JSON.stringify(carrito));
+};
 
