@@ -1,22 +1,25 @@
-body{
+body {
     margin: 0px;
 }
+
 /* navbar */
 .nav-container {
     position: sticky;
     z-index: 3;
     top: 0;
 }
+
 .navbar {
     display: flex;
     justify-content: space-between;
     height: 12vh;
     background-color: black;
 }
+
 .navbar-logo {
     justify-self: start;
     margin-left: 20px;
-    color:greenyellow;
+    color: greenyellow;
     margin-top: 4vh;
     cursor: pointer;
 }
@@ -27,20 +30,22 @@ body{
     margin-top: 3.5vh;
     cursor: pointer;
 }
+
 /*banner*/
 
 .banner {
     background-size: cover;
     background-position: center;
     height: 100vh;
-    background-image:none,
-    url(img/flying.JPG);
+    background-image: none,
+        url(img/flying.JPG);
 }
 
 .banner-container {
     text-align: center;
     padding: 15% 0;
 }
+
 .banner h1 {
     margin: 0;
     font-size: 62px;
@@ -49,14 +54,16 @@ body{
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 
 }
+
 .banner p {
     font-size: 30px;
     color: red;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
+
 /* sneakers cards */
 
-.shop-sneakers {
+.shop-content {
     display: flex;
     justify-content: space-around;
     background-color: black;
@@ -64,31 +71,34 @@ body{
     margin-top: 30px;
     margin-right: 80px;
     margin-left: 80px;
-    
+
 
 }
 
-.card > img {
+.card>img {
     width: 90%;
     height: 250px;
 
 }
+
 .price {
     color: greenyellow;
     font-size: 30px;
     text-align: center;
 }
+
 .card button {
     border: none;
     outline: 0;
     padding: 12px;
     color: white;
-    background-color:red;
+    background-color: red;
     text-align: center;
     cursor: pointer;
     width: 100%;
 
 }
+
 .card button:hover {
     opacity: 0.7;
 }
@@ -105,12 +115,12 @@ body{
     flex-direction: column;
     align-items: center;
 
-/* ======= Top ======= */
+    /* ======= Top ======= */
     position: fixed;
     overflow: auto;
     z-index: 9;
     top: 12vh;
-    
+
 }
 
 .model-header {
@@ -126,19 +136,19 @@ body{
 }
 
 .model-header-button {
-cursor: pointer;
+    cursor: pointer;
 }
 
-.model-container > .model-content {
-display: flex;
-flex-direction: row;
-justify-content: space-around;
-align-items: center;
-width: 70%;
-margin: 10px;
+.model-container>.model-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 70%;
+    margin: 10px;
 }
 
-.model-container > div img {
+.model-container>div img {
     height: 120px;
     width: 120%;
 }
@@ -152,6 +162,11 @@ margin: 10px;
     padding-top: 20px;
 }
 
+/* delete button product */
+.delete-product {
+    cursor: pointer;
+}
+
 .sumar {
     cursor: pointer;
 }
@@ -159,17 +174,3 @@ margin: 10px;
 .restar {
     cursor: pointer;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
