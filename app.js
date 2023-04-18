@@ -23,11 +23,11 @@ productos.forEach((sneak) => {
 
     shopSneakers.append(content);
 
-    let buy = document.createElement("button")
-    buy.innerText = 'comprar';
-    buy.className = "comprar";
+    let comprar = document.createElement("button")
+    comprar.innerText = 'comprar';
+    comprar.className = "comprar";
     
-    content.append(buy);
+    content.append(comprar);
 
     comprar.addEventListener('click', () => {
         const repeat = carrito.some((repeatProduct) => repeatProduct.id === productos.id);
@@ -40,8 +40,5 @@ productos.forEach((sneak) => {
                 }
 
             }
-        }
-    })
-
-
-};
+        
+    )}
