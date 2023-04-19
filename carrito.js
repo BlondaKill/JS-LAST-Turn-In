@@ -35,6 +35,26 @@ modelContainer.innerHTML = '';
     `;
 
         modelContainer.append(carritoContent);
+        //console.log(carrito.length);
+
+        let restar = carritoContent.querySelector('.restar');
+
+        restar.addEventListener("click", () => {
+            if (product.cantidad !== 1) {
+                /*console.log('restar')*/
+                product.cantidad - 1;
+            }
+            saveLocal();
+            pintarCarrito();
+        });
+
+        let sumar = carritoContent.querySelector('.sumar');
+        sumar.addEventListener("click", () => {
+            product.cantidad + 1;
+            saveLocal();
+            pintarCarrito();
+        });
+
         let eliminar = document.createElement('span');
         eliminar.innerText = "❌";
         eliminar.className = 'delete-product';
@@ -55,7 +75,7 @@ modelContainer.innerHTML = '';
 verCarrito.addEventListener('click', pintarCarrito)
 
 const eliminarProducto = () => {
-    const foundId = carrito.find((element) => element.id);
+const foundId = carrito.find((element) => element.id);
 
     carrito = carrito.filter((carritoId) => {
         return carritoId !== foundId;
@@ -69,7 +89,7 @@ const eliminarProducto = () => {
 const carritoCounter = () => {
     cantidadCarrito.style.display = 'block';
 
-    const carritoLenght = carrito.length;
+const carritoLenght = carrito.length;
     localStorage.setItem('carrito.lenght', JSON.stringify(carritoLenght));
 
     cantidadCarrito.innerText = JSON.parse(localStorage.getItem('carritoLenght'));

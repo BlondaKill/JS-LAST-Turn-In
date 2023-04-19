@@ -32,10 +32,10 @@
 
 
 
-            if (repeat) {
+            if (repeat === true) {
                 carrito.map((prod) => {
                     if (prod.id === product.id) {
-                        prod.cantidad++;
+                        prod.cantidad +1;
                     }
                 });
             } else {
@@ -57,3 +57,8 @@
     const saveLocal = () => {
         localStorage.setItem('carrito', JSON.stringify(carrito));
     };
+
+
+
+
+    
