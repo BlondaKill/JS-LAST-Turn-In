@@ -24,15 +24,25 @@ modelContainer.innerHTML = '';
     carrito.forEach((product) => {
         let carritoContent = document.createElement('div');
         carritoContent.className = 'model-content';
-        carritoContent.innerHTML = `
-            <img src ="${product.img}">
+        carritoContent.classList.add('card');
+        carritoContent.style.width = '18rem';
+        carritoContent.className = 'model-content';
+        carritoContent.innerHTML = `<div class = 'card-body'> 
+
+
+        
+            <img src = "${product.img}">
+            <h5 class = 'card-title'> ${product.nombre} </h5>;
+            <p class = 'card-text'>${product.precio}</p>
             <h3>${product.nombre}</h3>;
             <p>${product.precio} $</p>
             <span class = 'restar'> - </span>
             <p>Cantidad: ${product.cantidad} $</p>
             <span class = 'sumar'> + </span>
             <p>Total: ${product.cantidad * product.precio} $</p>
-    `;
+            <span class = 'sumar'> + </span>;
+            <p>Total: ${product.cantidad * product.precio} $</P>
+            </div> `;
 
         modelContainer.append(carritoContent);
         //console.log(carrito.length);
