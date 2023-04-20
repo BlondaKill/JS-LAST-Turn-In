@@ -31,7 +31,7 @@ modelContainer.innerHTML = '';
             <h5 class = 'card-title'> ${product.nombre} </h5>
             <p class = 'card-text'>${product.precio}</p>
             <span class = 'restar'> - </span>
-            <p>Cantidad: ${product.cantidad} $</p>
+            <p>Cantidad: ${product.cantidad}</p>
             <span class = 'sumar'> + </span>
             <p>Total: ${product.cantidad * product.precio} $</p>
             <span class = 'delete-product'> ❌ </span> 
