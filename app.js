@@ -1,11 +1,10 @@
-    
     const shopContent = document.getElementById(id = "shopContent");
     const verCarrito = document.getElementById("verCarrito");
     const modelContainer = document.getElementById('model-container');
     const showAlert = document.getElementById('showAlert');
     const cantidadCarrito = document.getElementById('cantidadCarrito');
 
-    
+
 
 
     let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
@@ -26,15 +25,15 @@
         shopContent.append(content);
 
         let comprar = document.createElement("button");
-        comprar.setAttribute('id',`${product.id}`)
+        comprar.setAttribute('id', `${product.id}`)
         comprar.innerText = 'comprar';
         comprar.className = 'comprar';
 
         content.append(comprar);
 
-        comprar.addEventListener('click', agregarAlCarrito); 
+        comprar.addEventListener('click', agregarAlCarrito);
     });
-        
+
     const saveLocal = () => {
         localStorage.setItem('carrito', JSON.stringify(carrito));
     };
@@ -43,10 +42,10 @@
 
         const id = parseInt(e.target.id);
 
-        const prodEncontrado = productos.find( p => p.id === parseInt(e.target.id));
+        const prodEncontrado = productos.find(p => p.id === parseInt(e.target.id));
         console.log(prodEncontrado);
 
-        const repeat = carrito.some( p => p.id === id);
+        const repeat = carrito.some(p => p.id === id);
 
         const prodAlCarrito = {
 
@@ -58,7 +57,7 @@
         }
 
         if (repeat) {
-            const indice = carrito.findIndex( p => p.id === id);
+            const indice = carrito.findIndex(p => p.id === id);
             carrito[indice].cantidad++;
             carrito[indice].precio = prodAlCarrito.precio * carrito[indice].cantidad;
             console.log(carrito);
@@ -66,14 +65,7 @@
             carrito.push(prodAlCarrito);
             console.log(carrito);
             carritoCounter();
-            
+
         }
         saveLocal();
     }
-    
-
-
-
-
-
-    
