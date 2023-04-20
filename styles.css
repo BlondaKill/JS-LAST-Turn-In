@@ -28,10 +28,10 @@ body {
     justify-self: start;
     margin-left: 20px;
     color: red;
-    margin-top: 4vh;
+    /*margin-top: 4vh;*/
     cursor: pointer;
     font-family:'sedgwick ave display';
-    font-size: 50px;
+    font-size: 60px;
 }
 
 .ver-carrito {

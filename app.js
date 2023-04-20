@@ -10,6 +10,10 @@
 
     let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
+
+    //render 
+    //logica carrito - agregar prod al carrito
+
     productos.forEach((product) => {
         let content = document.createElement('div');
         content.className = "card"
@@ -21,42 +25,53 @@
 
         shopContent.append(content);
 
-        let comprar = document.createElement("button")
+        let comprar = document.createElement("button");
+        comprar.setAttribute('id',`${product.id}`)
         comprar.innerText = 'comprar';
         comprar.className = 'comprar';
 
         content.append(comprar);
 
-        comprar.addEventListener('click', () => {
-        const repeat = carrito.some((repeatProduct) => repeatProduct.id === product.id);
-
-
-
-            if (repeat === true) {
-                carrito.map((prod) => {
-                    if (prod.id === product.id) {
-                        prod.cantidad +1;
-                    }
-                });
-            } else {
-                carrito.push({
-                    id: product.id,
-                    img: product.img,
-                    nombre: product.nombre,
-                    precio: product.precio,
-                    cantidad: product.cantidad,
-                });
-                console.log(carrito);
-                console.log(carrito.length);
-                carritoCounter();
-                saveLocal();
-            }
-        });
+        comprar.addEventListener('click', agregarAlCarrito); 
     });
-
+        
     const saveLocal = () => {
         localStorage.setItem('carrito', JSON.stringify(carrito));
     };
+
+    function agregarAlCarrito(e) {
+
+        const id = parseInt(e.target.id);
+
+        const prodEncontrado = productos.find( p => p.id === parseInt(e.target.id));
+        console.log(prodEncontrado);
+
+        const repeat = carrito.some( p => p.id === id);
+
+        const prodAlCarrito = {
+
+            id: prodEncontrado.id,
+            img: prodEncontrado.img,
+            nombre: prodEncontrado.nombre,
+            precio: prodEncontrado.precio,
+            cantidad: prodEncontrado.cantidad,
+        }
+
+        if (repeat) {
+            const indice = carrito.findIndex( p => p.id === id);
+            carrito[indice].cantidad++;
+            carrito[indice].precio = prodAlCarrito.precio * carrito[indice].cantidad;
+            console.log(carrito);
+        } else {
+            carrito.push(prodAlCarrito);
+            console.log(carrito);
+            carritoCounter();
+            
+        }
+        saveLocal();
+    }
+    
+
 
 
 

@@ -76,7 +76,6 @@ modelContainer.innerHTML = '';
     totalBuying.innerHTML = `total a pagar: ${total} $`;
     modelContainer.append(totalBuying);
 ;
-
 verCarrito.addEventListener('click', pintarCarrito)
 
 const eliminarProducto = (id) => {
