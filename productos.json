@@ -1,0 +1,66 @@
+[{
+    "id": 1,
+    "nombre": "Bart",
+    "precio": 120,
+    "img": "../img/bart.jpeg",
+    "cantidad": 1
+  },
+  {
+    "id": 2,
+    "nombre": "Fire",
+    "precio" : 150,
+    "img": "../img/fuego.png",
+    "cantidad" : 1
+  },
+  {
+    "id": 3,
+    "nombre": "Johnny",
+    "precio": 150,
+    "img": "../img/johnny.jpg",
+    "cantidad": 1
+  },
+  {
+    "id": 4,
+    "nombre": "Joker",
+    "precio": 150,
+    "img": "../img/joker.jpg",
+    "cantidad": 1
+  },
+
+  {
+    "id": 5,
+    "nombre": "Heroe",
+    "precio": 150,
+    "img": "../img/heroe.png",
+    "cantidad": 1
+  },
+  {
+    "id": 6,
+    "nombre": "Mixin",
+    "precio": 150,
+    "img": "../img/mixin.jpg",
+    "cantidad": 1
+  },
+  {
+    "id": 7,
+    "nombre": "Light",
+    "precio": 150,
+    "img": "../img/nikeluces.png",
+    "cantidad": 1
+  },
+  {
+    "id": 8,
+    "nombre": "DC",
+    "precio": 150,
+    "img": "../img/dc.jpeg",
+    "cantidad": 1
+  },
+  {
+    "id": 9,
+    "nombre": "Picture",
+    "precio": 150,
+    "img": "../img/picture.jpg",
+    "cantidad": 1
+  }
+
+]

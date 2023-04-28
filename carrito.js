@@ -26,14 +26,16 @@ const pintarCarrito = () => {
         carritoContent.style.width = '18rem';
         carritoContent.className = 'model-content';
         carritoContent.innerHTML = `<div class = 'card-body'> 
-            <img src = "${product.img}">
+            <img class = "imgCardCarrito" src = "${product.img}">
             <h5 class = 'card-title'> ${product.nombre} </h5>
             <p class = 'card-text'>${product.precio}</p>
+            <div class = "cardCarritoContMm">
             <span class = 'restar'> - </span>
             <p>Cantidad: ${product.cantidad}</p>
             <span class = 'sumar'> + </span>
+            </div>
             <p>Total: ${product.cantidad * product.precio} $</p>
-            <span class = 'delete-product'> ❌ </span> 
+            <span class = 'delete-product'>🗑️</span> 
             </div> `;
 
         modelContainer.append(carritoContent);
@@ -51,8 +53,10 @@ const pintarCarrito = () => {
         });
 
         let sumar = carritoContent.querySelector('.sumar');
+
         sumar.addEventListener("click", () => {
-            product.cantidad + 1;
+
+            product.cantidad++;
             saveLocal();
             pintarCarrito();
         });

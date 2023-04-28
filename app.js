@@ -9,6 +9,15 @@
 
     let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
+    //api
+
+
+    //JSON
+    let productos;
+    obtenerJSON();
+
+
+
 
     //render 
     //logica carrito - agregar prod al carrito
@@ -69,3 +78,13 @@
         }
         saveLocal();
     }
+
+//obtenerJSON
+
+async function obtenerJSON(){
+    const URLJSON = '/productos.json';
+    const respuesta = await fetch(URLJSON);
+    const data = await respuesta.json();
+    productos = data;
+    obtenerJSON();
+}
