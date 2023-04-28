@@ -37,13 +37,13 @@ const pintarCarrito = () => {
             </div> `;
 
         modelContainer.append(carritoContent);
-        //console.log(carrito.length);
+        
 
         let restar = carritoContent.querySelector('.restar');
 
         restar.addEventListener("click", () => {
             if (product.cantidad !== 1) {
-                /*console.log('restar')*/
+        
                 product.cantidad - 1;
             }
             saveLocal();
