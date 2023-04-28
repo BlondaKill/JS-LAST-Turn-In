@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo+Narrow:ital@1&family=Covered+By+Your+Grace&family=Lilita+One&family=Permanent+Marker&family=Righteous&family=Roboto:wght@300&family=Rubik+80s+Fade&family=Rubik+Vinyl&family=Sedgwick+Ave+Display&family=Tilt+Prism&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Covered+By+Your+Grace&family=Lilita+One&family=Permanent+Marker&family=Righteous&family=Roboto:wght@300&family=Rubik+80s+Fade&family=Rubik+Mono+One&family=Rubik+Vinyl&family=Rubik+Wet+Paint&family=Sedgwick+Ave+Display&family=Tilt+Prism&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Covered+By+Your+Grace&family=Lilita+One&family=Permanent+Marker&family=Righteous&family=Roboto:wght@300&family=Rubik+80s+Fade&family=Rubik+Mono+One&family=Rubik+Vinyl&family=Rubik+Wet+Paint&family=Sedgwick+Ave+Display&family=Tilt+Prism&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Anton&family=Archivo+Black&family=Covered+By+Your+Grace&family=DynaPuff:wght@500;600;700&family=Gruppo&family=Indie+Flower&family=Kalam:wght@300;400;700&family=Lilita+One&family=Permanent+Marker&family=Red+Hat+Display:ital,wght@0,300;0,400;0,500;1,300&family=Righteous&family=Roboto:wght@300&family=Rowdies:wght@300;400;700&family=Rubik+80s+Fade&family=Rubik+Mono+One&family=Rubik+Vinyl&family=Rubik+Wet+Paint&family=Sedgwick+Ave+Display&family=Shadows+Into+Light&family=Sigmar&display=swap');
 
 
 body {
@@ -59,16 +59,17 @@ body {
 
 .banner h1 {
     margin: 0;
-    font-size: 80px;
-    color: red;
+    font-size: 100px;
+    color: greenyellow;
     font-weight: bold;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+ 
 
 }
 
 .banner p {
-    font-size: 30px;
-    color: greenyellow;
+    font-size: 50px;
+    color: red;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
@@ -92,10 +93,19 @@ body {
 
 }
 
+.card h3{
+    text-align: center;
+    color: red;
+    font-family: 'sedgwick ave display';
+    
+
+}
+
 .price {
-    color: greenyellow;
+    color: black;
     font-size: 30px;
     text-align: center;
+    font-family: 'sigmar';
 }
 
 .card button {
@@ -199,3 +209,4 @@ body {
     position: absolute;
     display: none;
 }
+
