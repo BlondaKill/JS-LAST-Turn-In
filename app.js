@@ -81,10 +81,38 @@
 
 //obtenerJSON
 
-async function obtenerJSON(){
+/*async function obtenerJSON(){
     const URLJSON = '/productos.json';
     const respuesta = await fetch(URLJSON);
     const data = await respuesta.json();
     productos = data;
     obtenerJSON();
 }
+
+ 
+
+
+
+
+
+
+let http = new XMLHttpRequest();
+ http.open("get", "productos.json", true);
+ http.send();
+ http.onload = function(){
+    if(this.readyState === 4 && this.status == 200){
+        let productos = JSON.parse(this.responseText);
+        let output = ""`
+        <div class = "productos">
+        <img src= "" alt="">
+        <p class = ></p */
+        
+        
+        
+        
+        </div>
+        `
+
+    }
+ }
+
