@@ -12,16 +12,22 @@
     //api
 
 
-    //JSON
-    let productos;
-    obtenerJSON();
+//obtenerJSON
+
+const url = "./productos.json";
+
+fetch(url)
+.then(res => res.json())
+.then(productos => console.log(productos))
 
 
-
-
-    //render 
-    //logica carrito - agregar prod al carrito
-
+//render productos
+    
+    function mostrarProductos(productos){
+        //console.log("EN LA FUNCION");
+       // console.log(productos);
+    
+        
     productos.forEach((product) => {
         let content = document.createElement('div');
         content.className = "card"
@@ -42,6 +48,7 @@
 
         comprar.addEventListener('click', agregarAlCarrito);
     });
+}
 
     const saveLocal = () => {
         localStorage.setItem('carrito', JSON.stringify(carrito));
@@ -79,40 +86,11 @@
         saveLocal();
     }
 
-//obtenerJSON
 
-/*async function obtenerJSON(){
-    const URLJSON = '/productos.json';
-    const respuesta = await fetch(URLJSON);
-    const data = await respuesta.json();
-    productos = data;
-    obtenerJSON();
-}
-
+        
+      
  
 
 
 
-
-
-
-let http = new XMLHttpRequest();
- http.open("get", "productos.json", true);
- http.send();
- http.onload = function(){
-    if(this.readyState === 4 && this.status == 200){
-        let productos = JSON.parse(this.responseText);
-        let output = ""`
-        <div class = "productos">
-        <img src= "" alt="">
-        <p class = ></p */
-        
-        
-        
-        
-        </div>
-        `
-
-    }
- }
-
+ 
