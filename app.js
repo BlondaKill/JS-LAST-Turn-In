@@ -9,7 +9,7 @@
 
     let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-    //api
+//api
 
 
 //obtenerJSON
@@ -17,15 +17,15 @@
 const url = "./productos.json";
 
 fetch(url)
-.then(res => res.json())
-.then(productos => console.log(productos))
+    .then((res) => res.json())
+    .then((productos) => mostrarProductos(productos));
 
 
 //render productos
     
     function mostrarProductos(productos){
-        //console.log("EN LA FUNCION");
-       // console.log(productos);
+        console.log("EN LA FUNCION");
+        console.log(productos);
     
         
     productos.forEach((product) => {
