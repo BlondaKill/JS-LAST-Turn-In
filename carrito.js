@@ -5,7 +5,7 @@ const pintarCarrito = () => {
     const modelHeader = document.createElement('div');
     modelHeader.className = 'model-header';
     modelHeader.innerHTML = `
-    <h1 class = 'model-header-title'>Cart</h1>
+    <h1 class = 'model-header-title'>Your Cart</h1>
     `;
     modelContainer.append(modelHeader);
 
@@ -44,19 +44,39 @@ const pintarCarrito = () => {
         let restar = carritoContent.querySelector('.restar');
 
         restar.addEventListener("click", () => {
-            if (product.cantidad !== 1) {
-        
-                product.cantidad - 1;
-            }
+            if (product.cantidad > 1) {
+                product.cantidad --;
+
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: `Eliminaste una ${product.nombre} de tu 🛒 !`,
+                    showConfirmButton: false,
+                    timer: 1500
+                  })
+            
             saveLocal();
             pintarCarrito();
-        });
+        }else{
+            eliminarProducto(product.id);
+        }
+    });
 
         let sumar = carritoContent.querySelector('.sumar');
 
         sumar.addEventListener("click", () => {
 
             product.cantidad++;
+
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: `Agregaste otra ${product.nombre} a tu 🛒!`,
+                showConfirmButton: false,
+                timer: 1500
+              })
+      
+
             saveLocal();
             pintarCarrito();
         });

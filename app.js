@@ -4,12 +4,9 @@
     const showAlert = document.getElementById('showAlert');
     const cantidadCarrito = document.getElementById('cantidadCarrito');
 
-
-
-
     let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-//api
+
 
 
 //obtenerJSON
@@ -40,31 +37,35 @@ fetch(url)
         shopContent.append(content);
 
         let comprar = document.createElement("button");
-        comprar.setAttribute('id', `${product.id}`)
-        comprar.innerText = 'comprar';
+        comprar.setAttribute("id", `${product.id}`)
+        comprar.innerText = 'Add to Cart';
         comprar.className = 'comprar';
+
+        
 
         content.append(comprar);
 
-        comprar.addEventListener('click', agregarAlCarrito);
+        comprar.addEventListener('click', (e)=> agregarAlCarrito(e, productos));
+
+        
     });
+    
 }
 
     const saveLocal = () => {
         localStorage.setItem('carrito', JSON.stringify(carrito));
     };
 
-    function agregarAlCarrito(e) {
+    function agregarAlCarrito(e, productos) {
 
         const id = parseInt(e.target.id);
 
-        const prodEncontrado = productos.find(p => p.id === parseInt(e.target.id));
+        const prodEncontrado = productos.find((p) => p.id === parseInt(e.target.id));
         console.log(prodEncontrado);
 
-        const repeat = carrito.some(p => p.id === id);
+        const repeat = carrito.some((p) => p.id === id);
 
         const prodAlCarrito = {
-
             id: prodEncontrado.id,
             img: prodEncontrado.img,
             nombre: prodEncontrado.nombre,
@@ -73,7 +74,7 @@ fetch(url)
         }
 
         if (repeat) {
-            const indice = carrito.findIndex(p => p.id === id);
+            const indice = carrito.findIndex((p) => p.id === id);
             carrito[indice].cantidad++;
             carrito[indice].precio = prodAlCarrito.precio * carrito[indice].cantidad;
             console.log(carrito);
@@ -83,14 +84,15 @@ fetch(url)
             carritoCounter();
 
         }
+
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: '👟 SNKRS agregada !!!',
+            showConfirmButton: false,
+            timer: 1500
+          })
         saveLocal();
     }
 
 
-        
-      
- 
-
-
-
- 
