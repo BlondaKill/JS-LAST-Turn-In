@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo+Narrow:ital@1&family=Covered+By+Your+Grace&family=Lilita+One&family=Permanent+Marker&family=Righteous&family=Roboto:wght@300&family=Rubik+80s+Fade&family=Rubik+Vinyl&family=Sedgwick+Ave+Display&family=Tilt+Prism&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo+Narrow:ital@1&family=Covered+By+Your+Grace&family=Lilita+One&family=Permanent+Marker&family=Righteous&family=Roboto:wght@300&family=Rubik+80s+Fade&family=Rubik+Vinyl&family=Sedgwick+Ave+Display&family=Tilt+Prism&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Covered+By+Your+Grace&family=Lilita+One&family=Permanent+Marker&family=Righteous&family=Roboto:wght@300&family=Rubik+80s+Fade&family=Rubik+Mono+One&family=Rubik+Vinyl&family=Rubik+Wet+Paint&family=Sedgwick+Ave+Display&family=Tilt+Prism&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Covered+By+Your+Grace&family=Lilita+One&family=Permanent+Marker&family=Righteous&family=Roboto:wght@300&family=Rubik+80s+Fade&family=Rubik+Mono+One&family=Rubik+Vinyl&family=Rubik+Wet+Paint&family=Sedgwick+Ave+Display&family=Tilt+Prism&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Anton&family=Archivo+Black&family=Covered+By+Your+Grace&family=DynaPuff:wght@500;600;700&family=Gruppo&family=Indie+Flower&family=Kalam:wght@300;400;700&family=Lilita+One&family=Permanent+Marker&family=Red+Hat+Display:ital,wght@0,300;0,400;0,500;1,300&family=Righteous&family=Roboto:wght@300&family=Rowdies:wght@300;400;700&family=Rubik+80s+Fade&family=Rubik+Mono+One&family=Rubik+Vinyl&family=Rubik+Wet+Paint&family=Sedgwick+Ave+Display&family=Shadows+Into+Light&family=Sigmar&display=swap');
+
 
 
 body {
@@ -133,7 +132,8 @@ body {
 .card h3{
     text-align: center;
     color: red;
-    font-family: 'sedgwick ave display';
+    font-family: 'Permanent Marker';
+    font-size: 30px;
     
 
 }
@@ -142,7 +142,7 @@ body {
     color: black;
     font-size: 30px;
     text-align: center;
-    font-family: 'sigmar';
+    font-family: 'Permanent Marker';
 }
 
 .card button {
@@ -151,6 +151,8 @@ body {
     padding: 12px;
     color: white;
     background-color: red;
+    font-family: "Permanent Marker";
+    font-size: 30px;
     text-align: center;
     cursor: pointer;
     width: 100%;
@@ -168,7 +170,7 @@ body {
     margin: 0 10%;
     max-height: 88vh;
     color: greenyellow;
-    background-color: orange;
+    background-color: rgb(169, 221, 66);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -191,6 +193,8 @@ body {
 
 .model-header-title {
     justify-self: start;
+    font-family:'permanent maker' ;
+    
 }
 
 .model-header-button {

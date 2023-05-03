@@ -6,8 +6,14 @@
 
     let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
+    let addAudio = document.getElementById("myAudio");
+    let addSound = document.getElementById("mySound");
+         
+        
 
 
+    
+    
 
 //obtenerJSON
 
@@ -40,16 +46,11 @@ fetch(url)
         comprar.setAttribute("id", `${product.id}`)
         comprar.innerText = 'Add to Cart';
         comprar.className = 'comprar';
-
-        
-
         content.append(comprar);
 
         comprar.addEventListener('click', (e)=> agregarAlCarrito(e, productos));
-
         
     });
-    
 }
 
     const saveLocal = () => {
@@ -92,6 +93,7 @@ fetch(url)
             showConfirmButton: false,
             timer: 1500
           })
+          myAudio.play();
         saveLocal();
     }
 

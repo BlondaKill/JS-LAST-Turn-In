@@ -54,9 +54,10 @@ const pintarCarrito = () => {
                     showConfirmButton: false,
                     timer: 1500
                   })
-            
+                 
             saveLocal();
             pintarCarrito();
+            mySound.play();
         }else{
             eliminarProducto(product.id);
         }
@@ -74,9 +75,9 @@ const pintarCarrito = () => {
                 title: `Agregaste otra ${product.nombre} a tu 🛒!`,
                 showConfirmButton: false,
                 timer: 1500
-              })
+            })
       
-
+            myAudio.play();
             saveLocal();
             pintarCarrito();
         });
@@ -85,11 +86,9 @@ const pintarCarrito = () => {
         eliminar.addEventListener('click', () => {
             eliminarProducto(product.id);
         })
-
-
-
         eliminar.addEventListener('click', eliminarProducto);
     });
+    
 };
 
 const total = carrito.reduce((acc, el) => acc + el.precio * el.cantidad, 0);
