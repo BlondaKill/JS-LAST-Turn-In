@@ -5,7 +5,8 @@ const pintarCarrito = () => {
     const modelHeader = document.createElement('div');
     modelHeader.className = 'model-header';
     modelHeader.innerHTML = `
-    <h1 class = 'model-header-title'>Your Cart</h1>
+    <h1 class = 'model-header-title'>Cart</h1>
+    <span class = "total-a-pagar"> Total: $${total}</span>
     `;
     modelContainer.append(modelHeader);
 
@@ -13,11 +14,16 @@ const pintarCarrito = () => {
     modelbutton.innerText = 'x';
     modelbutton.className = 'model-header-button';
 
+  
+
     modelbutton.addEventListener('click', () => {
         modelContainer.style.display = 'none';
     });
 
     modelHeader.append(modelbutton);
+
+    
+
 
 
     carrito.forEach((product) => {
@@ -95,8 +101,8 @@ const total = carrito.reduce((acc, el) => acc + el.precio * el.cantidad, 0);
 
 const totalBuying = document.createElement('div');
 totalBuying.className = 'total - content'
-totalBuying.innerHTML = `total a pagar: ${total} $`;
-modelContainer.append(totalBuying);;
+totalBuying.className = `total-a-pagar`;
+modelContainer.append(totalBuying);
 verCarrito.addEventListener('click', pintarCarrito)
 
 const eliminarProducto = (id) => {
