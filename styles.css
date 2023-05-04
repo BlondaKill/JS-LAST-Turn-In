@@ -26,7 +26,6 @@ body {
     justify-self: start;
     margin-left: 20px;
     color: red;
-    /*margin-top: 4vh;*/
     cursor: pointer;
     font-family: 'sedgwick ave display';
     font-size: 60px;
@@ -103,6 +102,7 @@ body {
     width: 90%;
     display: flex;
     justify-content: space-around;
+    
 }
 
 .card-body .restar{
@@ -193,18 +193,15 @@ body {
     width: 100%;
 }
 
-/*.model-header-title {
-    justify-self: start;
-    font-family:'permanent maker' ;
-    
-}*/
 
 .model-header-button {
     cursor: pointer;
+    font-family: "Permanent Marker";
 }
 
 .model-end-button {
     cursor: pointer;
+    font-family: "Permanent Marker";
 }
 
 .model-container>.model-content {
@@ -224,6 +221,7 @@ body {
 
 .total-a-pagar {
     font-size: 35px;
+    font-family: "Permanent Marker";
 }
 
 
@@ -232,6 +230,7 @@ body {
     padding: 20px;
     text-align: center;
     padding-top: 20px;
+    
 }
 
 /* delete button product */
@@ -241,10 +240,12 @@ body {
 
 .sumar {
     cursor: pointer;
+    
 }
 
 .restar {
     cursor: pointer;
+
 }
 
 /*cart counter*/

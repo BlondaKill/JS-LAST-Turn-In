@@ -103,7 +103,7 @@ const modelHeader = document.createElement('div');
 
 const totalBuying = document.createElement('div');
 totalBuying.className = 'total-content';
-totalBuying.className = `total-a-pagar`;
+totalBuying.className = 'total-a-pagar';
 modelContainer.append(totalBuying);
 }
 
