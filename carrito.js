@@ -85,18 +85,21 @@ const total = carrito.reduce((acc, el) => acc + el.precio * el.cantidad, 0);
 const modelHeader = document.createElement('div');
     modelHeader.className = 'model-header';
     modelHeader.innerHTML = `
-    <h1 class = 'model-header-title'>Cart</h1>
-    <span class = "total-a-pagar"> Total: $${total}</span>
+    <h1 class = "total-a-pagar"> Total: $${total}</h1>
+    <h2 class = "model-end-button">Check Out</h2>
+    <h3 class = "model-header-button">X</h3>
+    
     `;
 
     modelContainer.append(modelHeader);
 
-    const modelbutton = document.createElement('h1');
-    modelbutton.innerText = 'x';
-    modelbutton.className = 'model-header-button';
-    modelbutton.addEventListener('click', () => {
+    const modelButton = document.querySelector(".model-header-button");
+    const modelEndButton = document.querySelector(".model-end-button");
+    
+    modelButton.addEventListener('click', () => {
         modelContainer.style.display = 'none';
     });
+    
 
 const totalBuying = document.createElement('div');
 totalBuying.className = 'total-content';

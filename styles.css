@@ -188,18 +188,22 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: red;
+    background-color:red;
     color: #fff;
     width: 100%;
 }
 
-.model-header-title {
+/*.model-header-title {
     justify-self: start;
     font-family:'permanent maker' ;
     
-}
+}*/
 
 .model-header-button {
+    cursor: pointer;
+}
+
+.model-end-button {
     cursor: pointer;
 }
 
@@ -219,7 +223,7 @@ body {
 
 
 .total-a-pagar {
-    font-size: 20px;
+    font-size: 35px;
 }
 
 
