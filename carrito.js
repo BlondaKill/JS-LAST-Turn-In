@@ -2,30 +2,10 @@ const pintarCarrito = () => {
 
     modelContainer.innerHTML = '';
     modelContainer.style.display = 'flex';
-    const modelHeader = document.createElement('div');
-    modelHeader.className = 'model-header';
-    modelHeader.innerHTML = `
-    <h1 class = 'model-header-title'>Cart</h1>
-    <span class = "total-a-pagar"> Total: $${total}</span>
-    `;
-    modelContainer.append(modelHeader);
 
-    const modelbutton = document.createElement('h1');
-    modelbutton.innerText = 'x';
-    modelbutton.className = 'model-header-button';
-
-  
-
-    modelbutton.addEventListener('click', () => {
-        modelContainer.style.display = 'none';
-    });
-
-    modelHeader.append(modelbutton);
+    calcularTotal();
 
     
-
-
-
     carrito.forEach((product) => {
         let carritoContent = document.createElement('div');
         carritoContent.classList.add('card');
@@ -58,7 +38,7 @@ const pintarCarrito = () => {
                     icon: 'success',
                     title: `Eliminaste una ${product.nombre} de tu 🛒 !`,
                     showConfirmButton: false,
-                    timer: 1500
+                    timer: 1000
                   })
                  
             saveLocal();
@@ -80,7 +60,7 @@ const pintarCarrito = () => {
                 icon: 'success',
                 title: `Agregaste otra ${product.nombre} a tu 🛒!`,
                 showConfirmButton: false,
-                timer: 1500
+                timer: 1000
             })
       
             myAudio.play();
@@ -97,13 +77,35 @@ const pintarCarrito = () => {
     
 };
 
+function calcularTotal(){
 const total = carrito.reduce((acc, el) => acc + el.precio * el.cantidad, 0);
 
+
+
+const modelHeader = document.createElement('div');
+    modelHeader.className = 'model-header';
+    modelHeader.innerHTML = `
+    <h1 class = 'model-header-title'>Cart</h1>
+    <span class = "total-a-pagar"> Total: $${total}</span>
+    `;
+
+    modelContainer.append(modelHeader);
+
+    const modelbutton = document.createElement('h1');
+    modelbutton.innerText = 'x';
+    modelbutton.className = 'model-header-button';
+    modelbutton.addEventListener('click', () => {
+        modelContainer.style.display = 'none';
+    });
+
 const totalBuying = document.createElement('div');
-totalBuying.className = 'total - content'
+totalBuying.className = 'total-content';
 totalBuying.className = `total-a-pagar`;
 modelContainer.append(totalBuying);
+}
+
 verCarrito.addEventListener('click', pintarCarrito)
+
 
 const eliminarProducto = (id) => {
     const foundId = carrito.find((element) => element.id === id);

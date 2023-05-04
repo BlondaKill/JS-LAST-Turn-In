@@ -91,7 +91,7 @@ fetch(url)
             icon: 'success',
             title: '👟 SNKRS agregada !!!',
             showConfirmButton: false,
-            timer: 1500
+            timer: 1000
           })
           myAudio.play();
         saveLocal();
