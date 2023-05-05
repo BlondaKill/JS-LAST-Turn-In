@@ -5,7 +5,6 @@
     const cantidadCarrito = document.getElementById('cantidadCarrito');
 
     let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-
     let addAudio = document.getElementById("myAudio");
     let addSound = document.getElementById("mySound");
          
@@ -37,7 +36,7 @@ fetch(url)
         content.innerHTML = `
         <img src="${product.img}">
         <h3>${product.nombre}</h3>
-        <p class="price">${product.precio} $</p>
+        <p class="precio">${product.precio} $</p>
     `;
 
         shopContent.append(content);
