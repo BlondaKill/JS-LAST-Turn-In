@@ -22,6 +22,7 @@ const pintarCarrito = () => {
             </div>
             <p>Total: ${product.cantidad * product.precio} $</p>
             <span class = 'delete-product'>🗑️</span> 
+
             </div> `;
 
         modelContainer.append(carritoContent);
@@ -36,9 +37,9 @@ const pintarCarrito = () => {
                 Swal.fire({
                     position: 'center',
                     icon: 'success',
-                    title: `Eliminaste una ${product.nombre} de tu 🛒 !`,
+                    title: `Deleted a ${product.nombre} from your 🛒 !`,
                     showConfirmButton: false,
-                    timer: 1000
+                    timer: 1200
                   })
                  
             saveLocal();
@@ -58,9 +59,9 @@ const pintarCarrito = () => {
             Swal.fire({
                 position: 'center',
                 icon: 'success',
-                title: `Agregaste otra ${product.nombre} a tu 🛒!`,
+                title: `Added another ${product.nombre} to your 🛒!`,
                 showConfirmButton: false,
-                timer: 1000
+                timer: 1200
             })
       
             myAudio.play();
@@ -109,6 +110,9 @@ modelContainer.append(totalBuying);
 
 verCarrito.addEventListener('click', pintarCarrito)
 
+
+
+    
 
 const eliminarProducto = (id) => {
     const foundId = carrito.find((element) => element.id === id);

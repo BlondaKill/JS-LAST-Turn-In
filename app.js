@@ -1,12 +1,13 @@
     const shopContent = document.getElementById(id = "shopContent");
     const verCarrito = document.getElementById("verCarrito");
-    const modelContainer = document.getElementById('model-container');
-    const showAlert = document.getElementById('showAlert');
-    const cantidadCarrito = document.getElementById('cantidadCarrito');
+    const modelContainer = document.getElementById("model-container");
+    const showAlert = document.getElementById("showAlert");
+    const cantidadCarrito = document.getElementById("cantidadCarrito");
 
     let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
     let addAudio = document.getElementById("myAudio");
     let addSound = document.getElementById("mySound");
+    //let endButton = document.getElementById("model-end-button");
          
         
 
@@ -76,7 +77,7 @@ fetch(url)
         if (repeat) {
             const indice = carrito.findIndex((p) => p.id === id);
             carrito[indice].cantidad++;
-            carrito.precio = prodAlCarrito.precio * carrito[indice].cantidad;
+            
             console.log(carrito);
         } else {
             carrito.push(prodAlCarrito);
@@ -85,12 +86,13 @@ fetch(url)
 
         }
 
+
         Swal.fire({
-            position: 'center',
-            icon: 'success',
-            title: '👟 SNKRS agregada !!!',
-            showConfirmButton: false,
-            timer: 1000,
+            title: `Added ${prodEncontrado.nombre} to your 🛒`,
+            imageUrl: `${prodEncontrado.img}`,
+            imageWidth: 300,
+            imageHeight: 200,
+            imageAlt: 'prodEncontrado.nombre',
           })
           myAudio.play();
         saveLocal();
