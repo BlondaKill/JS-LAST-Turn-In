@@ -76,7 +76,7 @@ fetch(url)
         if (repeat) {
             const indice = carrito.findIndex((p) => p.id === id);
             carrito[indice].cantidad++;
-            carrito[indice].precio = prodAlCarrito.precio * carrito[indice].cantidad;
+            carrito.precio = prodAlCarrito.precio * carrito[indice].cantidad;
             console.log(carrito);
         } else {
             carrito.push(prodAlCarrito);
