@@ -34,7 +34,7 @@ fetch(url)
         let content = document.createElement('div');
         content.className = "card"
         content.innerHTML = `
-        <img src="${product.img}">
+        <img src= "${product.img}">
         <h3>${product.nombre}</h3>
         <p class="precio">${product.precio} $</p>
     `;
