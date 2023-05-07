@@ -60,8 +60,6 @@ body {
     color: greenyellow;
     font-weight: bold;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
- 
-
 }
 
 .banner p {
@@ -81,7 +79,8 @@ body {
     margin-right: 80px;
     margin-left: 80px;
 }
-.card-body{
+
+.card-body {
     background-color: black;
     display: flex;
     flex-direction: column;
@@ -91,21 +90,21 @@ body {
     border-radius: 20px;
     box-shadow: 10px 10px 10px black;
 }
-.card-body .imgCardCarrito{
+
+.card-body .imgCardCarrito {
     width: 100%;
     height: 10rem;
     border-radius: 10px;
     box-shadow: 4px solid greenyellow;
 }
 
-.card-body .cardCarritoContMn{
+.card-body .cardCarritoContMn {
     width: 90%;
     display: flex;
     justify-content: space-around;
-    
 }
 
-.card-body .restar{
+.card-body .restar {
     background-color: red;
     width: 30%;
     height: 30px;
@@ -115,7 +114,7 @@ body {
 }
 
 
-.card-body .sumar{
+.card-body .sumar {
     background-color: rgb(36, 132, 55);
     width: 30px;
     height: 30px;
@@ -127,16 +126,13 @@ body {
 .card>img {
     max-width: 100%;
     height: 250px;
-
 }
 
-.card h3{
+.card h3 {
     text-align: center;
     color: red;
     font-family: 'Permanent Marker';
     font-size: 30px;
-    
-
 }
 
 .precio {
@@ -157,7 +153,6 @@ body {
     text-align: center;
     cursor: pointer;
     width: 100%;
-
 }
 
 .card button:hover {
@@ -176,19 +171,18 @@ body {
     flex-direction: column;
     align-items: center;
 
-/* ======= Top ======= */
+    /* ======= Top ======= */
     position: fixed;
     overflow: auto;
     z-index: 9;
     top: 12vh;
-
 }
 
 .model-header {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color:red;
+    background-color: red;
     color: #fff;
     width: 100%;
     padding: 10px;
@@ -224,6 +218,7 @@ body {
     border-bottom: 3px solid greenyellow;
     transition: 0.5s ease-in-out;
 }
+
 .model-end-button:hover {
     background-color: greenyellow;
     border-bottom: 3px solid black;
@@ -251,13 +246,11 @@ body {
     color: black
 }
 
-
 .total-content {
     font-size: 25px;
     padding: 20px;
     text-align: center;
     padding-top: 20px;
-    
 }
 
 /* delete button product */
@@ -267,12 +260,10 @@ body {
 
 .sumar {
     cursor: pointer;
-    
 }
 
 .restar {
     cursor: pointer;
-
 }
 
 /*cart counter*/
@@ -288,4 +279,3 @@ body {
     position: absolute;
     display: none;
 }
-

@@ -8,9 +8,9 @@
   {
     "id": 2,
     "nombre": "Fire",
-    "precio" : 150,
+    "precio": 150,
     "img": "../img/fuego.png",
-    "cantidad" : 1
+    "cantidad": 1
   },
   {
     "id": 3,

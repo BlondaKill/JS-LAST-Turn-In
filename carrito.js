@@ -5,7 +5,7 @@ const pintarCarrito = () => {
 
     calcularTotal();
 
-    
+
     carrito.forEach((product) => {
         let carritoContent = document.createElement('div');
         carritoContent.classList.add('card');
@@ -26,13 +26,13 @@ const pintarCarrito = () => {
             </div> `;
 
         modelContainer.append(carritoContent);
-        
+
 
         let restar = carritoContent.querySelector('.restar');
 
         restar.addEventListener("click", () => {
             if (product.cantidad > 1) {
-                product.cantidad --;
+                product.cantidad--;
 
                 Swal.fire({
                     position: 'center',
@@ -40,16 +40,16 @@ const pintarCarrito = () => {
                     title: `Deleted a ${product.nombre} from your 🛒 !`,
                     showConfirmButton: false,
                     timer: 1800
-                  })
-                 
-            saveLocal();
-            pintarCarrito();
-            mySound.play();
-        }else{
-            eliminarProducto(product.id);
-        }
-    });
-        
+                })
+
+                saveLocal();
+                pintarCarrito();
+                mySound.play();
+            } else {
+                eliminarProducto(product.id);
+            }
+        });
+
         let sumar = carritoContent.querySelector('.sumar');
 
         sumar.addEventListener("click", () => {
@@ -63,7 +63,7 @@ const pintarCarrito = () => {
                 showConfirmButton: false,
                 timer: 1800
             })
-      
+
             myAudio.play();
             saveLocal();
             pintarCarrito();
@@ -75,15 +75,15 @@ const pintarCarrito = () => {
         })
         eliminar.addEventListener('click', eliminarProducto);
     });
-    
+
 };
 
-function calcularTotal(){
-const total = carrito.reduce((acc, el) => acc + el.precio * el.cantidad, 0);
+function calcularTotal() {
+    const total = carrito.reduce((acc, el) => acc + el.precio * el.cantidad, 0);
 
 
 
-const modelHeader = document.createElement('div');
+    const modelHeader = document.createElement('div');
     modelHeader.className = 'model-header';
     modelHeader.innerHTML = `
     <h1 class = "total-a-pagar"> Total: $${total}</h1>
@@ -96,37 +96,37 @@ const modelHeader = document.createElement('div');
 
     const modelButton = document.querySelector(".model-header-button");
     const modelEndButton = document.querySelector(".model-end-button");
-    
+
     modelButton.addEventListener('click', () => {
         modelContainer.style.display = 'none';
 
     });
-   
 
-const totalBuying = document.createElement('div');
-totalBuying.className = 'total-content';
-totalBuying.className = 'total-a-pagar';
-modelContainer.append(totalBuying);
 
-modelEndButton.addEventListener('click', () => {
-        
-    Swal.fire({
-        title: 'Succesful Purchase',
-        text: 'You will receive your order in 24 hours!',
-        position: 'center',
-        icon: 'success',
-        showConfirmButton: false,
-        timer: 2000
-      })
+    const totalBuying = document.createElement('div');
+    totalBuying.className = 'total-content';
+    totalBuying.className = 'total-a-pagar';
+    modelContainer.append(totalBuying);
 
-});
+    modelEndButton.addEventListener('click', () => {
+
+        Swal.fire({
+            title: 'Succesful Purchase',
+            text: 'You will receive your order in 24 hours!',
+            position: 'center',
+            icon: 'success',
+            showConfirmButton: false,
+            timer: 2000
+        })
+
+    });
 }
 
 verCarrito.addEventListener('click', pintarCarrito)
 
 
 
-    
+
 
 const eliminarProducto = (id) => {
     const foundId = carrito.find((element) => element.id === id);
@@ -151,4 +151,4 @@ const carritoCounter = () => {
 
 
 
-carritoCounter();    
+carritoCounter();
