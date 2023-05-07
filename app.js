@@ -51,7 +51,7 @@ fetch(url)
         comprar.addEventListener('click', (e)=> agregarAlCarrito(e, productos));
 
 
-        let checkOut = document.createElement("")
+        let checkOut = document.createElement("div");
 
         
     });
