@@ -11,7 +11,8 @@ const pintarCarrito = () => {
         carritoContent.classList.add('card');
         carritoContent.style.width = '18rem';
         carritoContent.className = 'model-content';
-        carritoContent.innerHTML = `<div class = 'card-body'> 
+        carritoContent.innerHTML = `
+            <div class = 'card-body'> 
             <img class = "imgCardCarrito" src = "${product.img}">
             <h5 class = 'card-title'> ${product.nombre} </h5>
             <p class = 'card-text'>${product.precio}</p>
@@ -22,7 +23,6 @@ const pintarCarrito = () => {
             </div>
             <p>Total: ${product.cantidad * product.precio} $</p>
             <span class = 'delete-product'>🗑️</span> 
-
             </div> `;
 
         modelContainer.append(carritoContent);
@@ -39,7 +39,7 @@ const pintarCarrito = () => {
                     icon: 'success',
                     title: `Deleted a ${product.nombre} from your 🛒 !`,
                     showConfirmButton: false,
-                    timer: 1200
+                    timer: 1800
                   })
                  
             saveLocal();
@@ -49,7 +49,7 @@ const pintarCarrito = () => {
             eliminarProducto(product.id);
         }
     });
-
+        
         let sumar = carritoContent.querySelector('.sumar');
 
         sumar.addEventListener("click", () => {
@@ -59,9 +59,9 @@ const pintarCarrito = () => {
             Swal.fire({
                 position: 'center',
                 icon: 'success',
-                title: `Added another ${product.nombre} to your 🛒!`,
+                title: `Added ${product.nombre} to your 🛒!`,
                 showConfirmButton: false,
-                timer: 1200
+                timer: 1800
             })
       
             myAudio.play();
@@ -99,13 +99,27 @@ const modelHeader = document.createElement('div');
     
     modelButton.addEventListener('click', () => {
         modelContainer.style.display = 'none';
+
     });
-    
+   
 
 const totalBuying = document.createElement('div');
 totalBuying.className = 'total-content';
 totalBuying.className = 'total-a-pagar';
 modelContainer.append(totalBuying);
+
+modelEndButton.addEventListener('click', () => {
+        
+    Swal.fire({
+        title: 'Succesful Purchase',
+        text: 'You will receive your order in 24 hours!',
+        position: 'center',
+        icon: 'success',
+        showConfirmButton: false,
+        timer: 2000
+      })
+
+});
 }
 
 verCarrito.addEventListener('click', pintarCarrito)
@@ -134,5 +148,7 @@ const carritoCounter = () => {
 
     cantidadCarrito.innerText = JSON.parse(localStorage.getItem('carritoLenght'));
 };
+
+
 
 carritoCounter();

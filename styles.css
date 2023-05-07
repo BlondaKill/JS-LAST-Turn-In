@@ -176,7 +176,7 @@ body {
     flex-direction: column;
     align-items: center;
 
-    /* ======= Top ======= */
+/* ======= Top ======= */
     position: fixed;
     overflow: auto;
     z-index: 9;

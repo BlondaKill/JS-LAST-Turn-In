@@ -7,7 +7,7 @@
     let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
     let addAudio = document.getElementById("myAudio");
     let addSound = document.getElementById("mySound");
-    //let endButton = document.getElementById("model-end-button");
+    
          
         
 
@@ -15,7 +15,7 @@
     
     
 
-//obtenerJSON
+//Obtener JSON
 
 const url = "./productos.json";
 
@@ -24,7 +24,7 @@ fetch(url)
     .then((productos) => mostrarProductos(productos));
 
 
-//render productos
+//Render productos
     
     function mostrarProductos(productos){
         console.log("EN LA FUNCION");
@@ -49,6 +49,10 @@ fetch(url)
         content.append(comprar);
 
         comprar.addEventListener('click', (e)=> agregarAlCarrito(e, productos));
+
+
+        let checkOut = document.createElement("")
+
         
     });
 }
