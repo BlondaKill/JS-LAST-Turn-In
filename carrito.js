@@ -151,4 +151,4 @@ const carritoCounter = () => {
 
 
 
-carritoCounter();
+carritoCounter();    
