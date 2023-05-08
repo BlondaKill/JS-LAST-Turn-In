@@ -118,8 +118,13 @@ function calcularTotal() {
             showConfirmButton: false,
             timer: 2000
         })
+carrito = []
+saveLocal();
+pintarCarrito();
 
     });
+
+
 }
 
 verCarrito.addEventListener('click', pintarCarrito)
